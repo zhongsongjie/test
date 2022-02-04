@@ -20,7 +20,7 @@ KEY_STATUS = { keyDown:false };
 for (code in KEY_CODES) {
   KEY_STATUS[KEY_CODES[code]] = false;
 }
-
+ƒ
 $(window).keydown(function (e) {
   KEY_STATUS.keyDown = true;
   if (KEY_CODES[e.keyCode]) {
@@ -421,6 +421,7 @@ Ship = function () {
     }
     if (KEY_STATUS.space) {
       if (this.delayBeforeBullet <= 0) {
+        this.delayBeforeBullet =10;
         for (var i = 0; i < this.bullets.length; i++) {
           if (!this.bullets[i].visible) {
             SFX.laser();
